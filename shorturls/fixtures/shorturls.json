@@ -1,0 +1,18 @@
+[
+    {
+        "model":"shorturls.urlmapping",
+        "pk":1,
+        "fields":{
+            "original_url": "http://www.google.ca/somelongpath",
+            "short_url": "A7dw"
+        }
+    },
+    {
+        "model":"shorturls.urlmapping",
+        "pk":2,
+        "fields":{
+            "original_url":"https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%8A%E3%83%80",
+            "short_url": "i0Vp"
+        }
+    }
+]

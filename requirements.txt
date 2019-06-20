@@ -1,2 +1,6 @@
 black
 django==2.2.2
+graphene==2.1.6
+# Bug in graphene-django that caused CSRF errors in tests, not yet released
+# Grabbing git commit with fix
+git+git://github.com/graphql-python/graphene-django.git@3cde872e2873197ba99de5004d59a8888d5f2223#egg=graphene-django

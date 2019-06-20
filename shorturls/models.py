@@ -1,4 +1,10 @@
+import random
+import string
+
 from django.db import models
+
+SHORT_URL_CHARACTERS = string.ascii_letters + string.digits
+SHORT_URL_LENGTH = 4
 
 
 class URLMapping(models.Model):
@@ -14,3 +20,16 @@ class URLMapping(models.Model):
 
     def __str__(self):
         return f"{self.original_url} -> {self.short_url}"
+
+    @staticmethod
+    def generate_short_url():
+        """Generate a short URL not in use already"""
+
+        def generate():
+            x = "".join(random.choices(SHORT_URL_CHARACTERS, k=SHORT_URL_LENGTH))
+            return x
+
+        short_url = generate()
+        while URLMapping.objects.filter(short_url=short_url).exists():
+            short_url = generate()
+        return short_url

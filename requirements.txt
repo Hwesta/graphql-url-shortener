@@ -1,5 +1,5 @@
 black
-django==2.2.2
+django==2.2.13
 graphene==2.1.6
 # Bug in graphene-django that caused CSRF errors in tests, not yet released
 # Grabbing git commit with fix
